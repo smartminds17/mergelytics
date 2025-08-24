@@ -1,0 +1,83 @@
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a//dev/null b/index.html
+index 0000000000000000000000000000000000000000..148eb9862d2d8a109bdd2f8762a979a4d4d1deff 100644
+--- a//dev/null
++++ b/index.html
+@@ -0,0 +1,74 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++  <meta charset="UTF-8" />
++  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
++  <title>Financial News Blog</title>
++  <style>
++    body {
++      font-family: Arial, sans-serif;
++      margin: 0 auto;
++      max-width: 800px;
++      padding: 1rem;
++      line-height: 1.6;
++      background-color: #f4f4f4;
++    }
++    header {
++      text-align: center;
++      margin-bottom: 2rem;
++    }
++    article {
++      background: #fff;
++      padding: 1rem;
++      margin-bottom: 1rem;
++      border-radius: 5px;
++      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
++    }
++    article h2 {
++      margin-top: 0;
++    }
++    footer {
++      text-align: center;
++      margin-top: 2rem;
++      color: #777;
++    }
++  </style>
++</head>
++<body>
++  <header>
++    <h1>Financial News Blog</h1>
++    <p>Latest headlines from around the web</p>
++  </header>
++  <main id="posts"></main>
++  <footer>
++    <p>Powered by public RSS feeds</p>
++  </footer>
++  <script>
++    async function loadFeed() {
++      const rssUrl = 'https://feeds.finance.yahoo.com/rss/2.0/headline?s=yhoo&region=US&lang=en-US';
++      try {
++        const response = await fetch('https://api.allorigins.win/raw?url=' + encodeURIComponent(rssUrl));
++        const text = await response.text();
++        const xml = new window.DOMParser().parseFromString(text, 'text/xml');
++        const items = xml.querySelectorAll('item');
++        const container = document.getElementById('posts');
++        items.forEach((item, index) => {
++          if (index >= 5) return; // show first 5 articles
++          const article = document.createElement('article');
++          const title = item.querySelector('title').textContent;
++          const link = item.querySelector('link').textContent;
++          const descriptionNode = item.querySelector('description');
++          const description = descriptionNode ? descriptionNode.textContent : '';
++          article.innerHTML = `<h2><a href="${link}" target="_blank">${title}</a></h2><p>${description}</p>`;
++          container.appendChild(article);
++        });
++      } catch (err) {
++        const container = document.getElementById('posts');
++        container.innerHTML = '<p>Failed to load news feed.</p>';
++        console.error(err);
++      }
++    }
++    document.addEventListener('DOMContentLoaded', loadFeed);
++  </script>
++</body>
++</html>
+ 
+EOF
+)
