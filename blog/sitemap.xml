@@ -2,17 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://mergelytics.com/</loc>
+    <loc>https://mergelytics.com/blog/</loc>
     <lastmod>2025-08-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mergelytics.com/posts/</loc>
+    <loc>https://mergelytics.com/blog/posts/</loc>
     <lastmod>2025-08-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mergelytics.com/blog/welcome-to-mergelytics/</loc>
+    <loc>https://mergelytics.com/blog/blog/welcome-to-mergelytics/</loc>
     <lastmod>2025-08-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mergelytics.com/categories/</loc>
+    <loc>https://mergelytics.com/blog/categories/</loc>
   </url><url>
-    <loc>https://mergelytics.com/tags/</loc>
+    <loc>https://mergelytics.com/blog/tags/</loc>
   </url>
 </urlset>
