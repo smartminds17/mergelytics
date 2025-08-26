@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Mergelytics Blog</title>
-    <link>https://mergelytics.com/blog/</link>
-    <description>Recent content on Mergelytics Blog</description>
+    <title>Posts on Mergelytics Blog</title>
+    <link>https://mergelytics.com/blog/posts/</link>
+    <description>Recent content in Posts on Mergelytics Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 26 Aug 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://mergelytics.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://mergelytics.com/blog/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Welcome to Mergelytics</title>
       <link>https://mergelytics.com/blog/posts/first-post/</link>
